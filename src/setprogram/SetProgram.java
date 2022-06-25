@@ -126,6 +126,14 @@ public class SetProgram {
         // test symmetricDifference() in aSet and bSet
         SetArray symmetricDifferenceSet = aSet.symmetricDifference(bSet);
         System.out.println("aSet.symmetricDifference(bSet) = " + symmetricDifferenceSet);
+
+        // test subsetOf() in uSet and aSet
+        System.out.println("aSet.subsetOf(uSet) = " + aSet.subsetOf(uSet)); // true because aSet is a subset of uSet
+        System.out.println("uSet.subsetOf(aSet) = " + uSet.subsetOf(aSet)); // false because uSet is not a subset of aSet
+
+        // test supersetOf() in uSet and bSet
+        System.out.println("uSet.supersetOf(bSet) = " + uSet.supersetOf(bSet)); // true because uSet is a superset of bSet
+        System.out.println("bSet.supersetOf(uSet) = " + bSet.supersetOf(uSet)); // false because bSet is not a superset of uSet
     }
 
     public static void testSetLinkedList() {
@@ -194,5 +202,13 @@ public class SetProgram {
         // test symmetricDifference() in aSet and bSet
         SetLinkedList symmetricDifferenceSet = aSet.symmetricDifference(bSet);
         System.out.println("aSet.symmetricDifference(bSet) = " + symmetricDifferenceSet);
+
+        // test subsetOf() in uSet and aSet
+        System.out.println("aSet.subsetOf(uSet) = " + aSet.subsetOf(uSet)); // true because aSet is a subset of uSet
+        System.out.println("uSet.subsetOf(aSet) = " + uSet.subsetOf(aSet)); // false because uSet is not a subset of aSet
+
+        // test supersetOf() in uSet and bSet
+        System.out.println("uSet.supersetOf(bSet) = " + uSet.supersetOf(bSet)); // true because uSet is a superset of bSet
+        System.out.println("bSet.supersetOf(uSet) = " + bSet.supersetOf(uSet)); // false because bSet is not a superset of uSet
     }
 }
