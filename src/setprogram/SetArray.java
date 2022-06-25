@@ -260,4 +260,52 @@ public class SetArray implements Set {
     }
     return newSet;
   }
+
+  /**
+   * Returns true if this set is a subset of the specified set.
+   * 
+   * @param other the other set
+   * @return true if this set is a subset of the specified set
+   */
+  public boolean subsetOf(SetArray other) {
+    for (int i = 0; i < size(); i++) {
+      if (!other.contains(set[i])) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  /**
+   * Returns true if this set is a proper subset of the specified set.
+   *
+   * @param other the other set
+   * @return true if this set is a proper subset of the specified set
+   */
+  public boolean properSubsetOf(SetArray other) {
+    if (size() >= other.size()) {
+      return false;
+    }
+    return subsetOf(other);
+  }
+
+  /**
+   * Returns true if this set is a superset of the specified set.
+   *
+   * @param other the other set
+   * @return true if this set is a superset of the specified set
+   */
+  public boolean supersetOf(SetArray other) {
+    return other.subsetOf(this);
+  }
+
+  /**
+   * Returns true if this set is a proper superset of the specified set.
+   *
+   * @param other the other set
+   * @return true if this set is a proper superset of the specified set
+   */
+  public boolean properSupersetOf(SetArray other) {
+    return other.properSubsetOf(this);
+  }
 }
