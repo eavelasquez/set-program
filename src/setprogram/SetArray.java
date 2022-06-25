@@ -152,6 +152,22 @@ public class SetArray implements Set {
   }
 
   /**
+   * Returns the index of the specified element in this set.
+   * 
+   * @param e the element to search for
+   * @return the index of the element in this set, or -1 if it is not found
+   */
+  @Override
+  public int indexOf(int e) {
+    for (int i = 0; i < size(); i++) {
+      if (set[i] == e) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  /**
    * Returns true if this set is equal to the specified set.
    * 
    * @param other the other set

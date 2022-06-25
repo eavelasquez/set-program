@@ -189,4 +189,24 @@ public class SetLinkedList implements Set {
   public void clear() {
     head = null;
   }
+
+  /**
+   * Returns the index of the specified element in this set.
+   * 
+   * @param e the element to search for
+   * @return the index of the element, or -1 if it is not found
+   */
+  @Override
+  public int indexOf(int e) {
+    int index = 0;
+    Node current = head;
+    while (current != null) {
+      if (current.item == e) {
+        return index;
+      }
+      current = current.next;
+      index++;
+    }
+    return -1;
+  }
 }

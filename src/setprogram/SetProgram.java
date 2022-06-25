@@ -99,6 +99,10 @@ public class SetProgram {
         cSet.clear();
         System.out.println("cSet.clear() = " + cSet);
         System.out.println("cSet.isEmpty() = " + cSet.isEmpty());
+
+        // test indexOf() in aSet
+        System.out.println("aSet.indexOf(2) = " + aSet.indexOf(2));
+        System.out.println("aSet.indexOf(3) = " + aSet.indexOf(3));
     }
 
     public static void testSetLinkedList() {
@@ -140,5 +144,9 @@ public class SetProgram {
         cSet.clear();
         System.out.println("cSet.clear() = " + cSet);
         System.out.println("cSet.isEmpty() = " + cSet.isEmpty());
+
+        // test indexOf() in aSet
+        System.out.println("aSet.indexOf(2) = " + aSet.indexOf(2));
+        System.out.println("aSet.indexOf(3) = " + aSet.indexOf(3));
     }
 }
