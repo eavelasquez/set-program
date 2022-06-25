@@ -319,4 +319,51 @@ public class SetLinkedList implements Set {
     }
     return symmetricDifference;
   }
+
+  /**
+   * Returns true if this set is a subset of the specified set.
+   *
+   * @param other the set to be tested as a subset of this set
+   * @return true if this set is a subset of the specified set
+   */
+  public boolean subsetOf(SetLinkedList other) {
+    Node current = head;
+    while (current != null) {
+      if (!other.contains(current.item)) {
+        return false;
+      }
+      current = current.next;
+    }
+    return true;
+  }
+
+  /**
+   * Returns true if this set is a proper subset of the specified set.
+   * 
+   * @param other the set to be tested as a proper subset of this set
+   * @return true if this set is a proper subset of the specified set
+   */
+  public boolean properSubsetOf(SetLinkedList other) {
+    return size() < other.size() && subsetOf(other);
+  }
+
+  /**
+   * Returns true if this set is a superset of the specified set.
+   * 
+   * @param other the set to be tested as a superset of this set
+   * @return true if this set is a superset of the specified set
+   */
+  public boolean supersetOf(SetLinkedList other) {
+    return other.subsetOf(this);
+  }
+
+  /**
+   * Returns true if this set is a proper superset of the specified set.
+   * 
+   * @param other the set to be tested as a proper superset of this set
+   * @return true if this set is a proper superset of the specified set
+   */
+  public boolean properSupersetOf(SetLinkedList other) {
+    return other.properSubsetOf(this);
+  }
 }
