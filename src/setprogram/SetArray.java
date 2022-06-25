@@ -26,6 +26,16 @@ public class SetArray implements Set {
   }
 
   /**
+   * Initializes a set with one element.
+   * 
+   * @param element the element to add to the set.
+   */
+  public SetArray(int e) {
+    set = new int[1];
+    set[0] = e;
+  }
+
+  /**
    * Initializes a set from an array of ints.
    * 
    * @param nums the array of ints
