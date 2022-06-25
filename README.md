@@ -4,9 +4,8 @@ This program represents the form of sets in arrays and linked list, it allows ad
 
 ## Classes and Methods
 
-- The SetArray class is a class that represents a set in an array.
-
-- The SetLinkedList class is a class that represents a set in a linked list.
+- The `SetArray` class is a class that represents a set in an array.
+- The `SetLinkedList` class is a class that represents a set in a linked list.
 
 Each class has the following methods:
 
