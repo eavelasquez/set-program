@@ -223,6 +223,23 @@ public class SetArray implements Set {
   }
 
   /**
+   * Returns a new set that is the complement of this set and the specified set.
+   * 
+   * @param other the other set
+   * @return a new set that is the complement of this set and the specified set
+   */
+  public SetArray complement(SetArray other) {
+    SetArray newSet = new SetArray();
+    // add the elements that are not in this set
+    for (int i = 0; i < other.size(); i++) {
+      if (!contains(other.set[i])) {
+        newSet.add(other.set[i]);
+      }
+    }
+    return newSet;
+  }
+
+  /**
    * Returns a new set that is the difference of this set and the specified set.
    * 
    * @param other the other set

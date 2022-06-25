@@ -119,6 +119,12 @@ public class SetProgram {
         SetArray intersectionSet = aSet.intersection(bSet);
         System.out.println("aSet.intersection(bSet) = " + intersectionSet);
 
+        // test complement() in aSet and uSet
+        System.out.println("aSet.complement(uSet) = " + aSet.complement(uSet));
+        System.out.println("uSet.complement(aSet) = " + uSet.complement(aSet));
+        System.out.println("bSet.complement(aSet) = " + bSet.complement(aSet));
+        System.out.println("aSet.complement(bSet) = " + aSet.complement(bSet));
+
         // test difference() in aSet and bSet
         SetArray differenceSet = aSet.difference(bSet);
         System.out.println("aSet.difference(bSet) = " + differenceSet);
@@ -194,6 +200,12 @@ public class SetProgram {
         // test intersection() in aSet and bSet
         SetLinkedList intersectionSet = aSet.intersection(bSet);
         System.out.println("aSet.intersection(bSet) = " + intersectionSet);
+
+        // test complement() in aSet and uSet
+        System.out.println("aSet.complement(uSet) = " + aSet.complement(uSet));
+        System.out.println("uSet.complement(aSet) = " + uSet.complement(aSet));
+        System.out.println("bSet.complement(aSet) = " + bSet.complement(aSet));
+        System.out.println("aSet.complement(bSet) = " + aSet.complement(bSet));
 
         // test difference() in aSet and bSet
         SetLinkedList differenceSet = aSet.difference(bSet);

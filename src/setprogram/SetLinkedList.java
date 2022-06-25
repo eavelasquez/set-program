@@ -274,6 +274,24 @@ public class SetLinkedList implements Set {
   }
 
   /**
+   * Returns a new set that is the complement of this set and the specified set.
+   * 
+   * @param other the other set
+   * @return a new set that is the complement of this set and the specified set
+   */
+  public SetLinkedList complement(SetLinkedList other) {
+    SetLinkedList complement = new SetLinkedList();
+    Node current = other.head;
+    while (current != null) {
+      if (!contains(current.item)) {
+        complement.add(current.item);
+      }
+      current = current.next;
+    }
+    return complement;
+  }
+
+  /**
    * Returns a new set that is the difference of this set and the specified set.
    * 
    * @param other the set to be subtracted from this set
