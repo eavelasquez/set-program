@@ -194,10 +194,14 @@ public class SetArray implements Set {
   public SetArray union(SetArray other) {
     SetArray newSet = new SetArray();
     for (int i = 0; i < size(); i++) {
-      newSet.add(set[i]);
+      if (!newSet.contains(set[i])) {
+        newSet.add(set[i]);
+      }
     }
     for (int i = 0; i < other.size(); i++) {
-      newSet.add(other.set[i]);
+      if (!newSet.contains(other.set[i])) {
+        newSet.add(other.set[i]);
+      }
     }
     return newSet;
   }
