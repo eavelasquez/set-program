@@ -23,38 +23,112 @@ public class SetArray implements Set {
     set = new int[0];
   }
 
+  /**
+   * Initializes a set from an array of ints.
+   * @param nums the array of ints
+   */
+  public SetArray(int[] nums) {
+    set = new int[nums.length];
+    for (int i = 0; i < nums.length; i++) {
+      set[i] = nums[i];
+    }
+  }
+
+  /**
+   * Returns true if this set contains the specified element.
+   * @param e the element to be checked for containment in this set
+   * @return true if this set contains e
+   */
   @Override
   public boolean contains(int e) {
-    // TODO Auto-generated method stub
+    for (int i = 0; i < set.length; i++) {
+      if (set[i] == e) {
+        return true;
+      }
+    }
     return false;
   }
 
+  /**
+   * Adds an element to this set if it is not already present.
+   * @param e the element to be added to this set
+   */
   @Override
   public void add(int e) {
-    // TODO Auto-generated method stub
-
+    if (!contains(e)) {
+      int[] newSet = new int[set.length + 1];
+      for (int i = 0; i < set.length; i++) {
+        newSet[i] = set[i];
+      }
+      newSet[set.length] = e;
+      set = newSet;
+    } else {
+      System.out.println("Element " + e + " already exists in the set.");
+    }
   }
 
+  /**
+   * Removes an element from this set if it is present.
+   * @param e the element to be removed from this set, if present
+   */
   @Override
   public void remove(int e) {
-    // TODO Auto-generated method stub
-
+    if (contains(e)) {
+      int[] newSet = new int[set.length - 1];
+      int j = 0;
+      for (int i = 0; i < set.length; i++) {
+        if (set[i] != e) {
+          newSet[j] = set[i];
+          j++;
+        }
+      }
+      set = newSet;
+    } else {
+      System.out.println("Element " + e + " does not exist in the set.");
+    }
   }
 
+  /**
+   * Returns a string representation of this set.
+   * @return a string representation of this set
+   */
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    for (int i = 0; i < set.length; i++) {
+      sb.append(set[i]);
+      if (i < set.length - 1) {
+        sb.append(", ");
+      }
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Returns the size of this set.
+   * @return the number of elements in this set
+   */
   @Override
   public int size() {
-    // TODO Auto-generated method stub
-    return 0;
+    return set.length;
   }
 
+  /**
+   * Returns true if this set is empty.
+   * @return true if this set contains no elements
+   */
   @Override
   public boolean isEmpty() {
-    // TODO Auto-generated method stub
-    return false;
+    return set.length == 0;
   }
 
+  /**
+   * Removes all of the elements from this set.
+   */
   @Override
   public void clear() {
-    // TODO Auto-generated method stub
+    set = new int[0];
   }
 }
