@@ -13,7 +13,7 @@ package setprogram;
  * structures that store a collection of unique elements in no particular order.
  * The set is implemented as a linked list.
  */
-public class SetLinkedList {
+public class SetLinkedList implements Set {
   Node head; // head of list
 
   /**
@@ -51,5 +51,38 @@ public class SetLinkedList {
       this.item = item;
       this.next = next;
     }
+  }
+
+  @Override
+  public boolean contains(int e) {
+    // TODO Auto-generated method stub
+    return false;
+  }
+
+  @Override
+  public void add(int e) {
+    // TODO Auto-generated method stub
+  }
+
+  @Override
+  public void remove(int e) {
+    // TODO Auto-generated method stub
+  }
+
+  @Override
+  public int size() {
+    // TODO Auto-generated method stub
+    return 0;
+  }
+
+  @Override
+  public boolean isEmpty() {
+    // TODO Auto-generated method stub
+    return false;
+  }
+
+  @Override
+  public void clear() {
+    // TODO Auto-generated method stub
   }
 }
