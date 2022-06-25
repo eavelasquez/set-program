@@ -122,7 +122,7 @@ public class SetProgram {
         // test difference() in aSet and bSet
         SetArray differenceSet = aSet.difference(bSet);
         System.out.println("aSet.difference(bSet) = " + differenceSet);
-        
+
         // test symmetricDifference() in aSet and bSet
         SetArray symmetricDifferenceSet = aSet.symmetricDifference(bSet);
         System.out.println("aSet.symmetricDifference(bSet) = " + symmetricDifferenceSet);
@@ -138,6 +138,7 @@ public class SetProgram {
         SetLinkedList aSet = new SetLinkedList(a);
         SetLinkedList bSet = new SetLinkedList(b);
         SetLinkedList cSet = new SetLinkedList(1);
+        SetLinkedList dSet = new SetLinkedList(1);
 
         // test toString()
         System.out.println("uSet = " + uSet);
@@ -171,5 +172,27 @@ public class SetProgram {
         // test indexOf() in aSet
         System.out.println("aSet.indexOf(2) = " + aSet.indexOf(2));
         System.out.println("aSet.indexOf(3) = " + aSet.indexOf(3));
+
+        // test equals() in cSet and dSet
+        System.out.println("cSet.equals(dSet) = " + cSet.equals(dSet));
+        cSet.add(1);
+        System.out.println("cSet.add(1) = " + cSet);
+        System.out.println("cSet.equals(dSet) = " + cSet.equals(dSet));
+
+        // test union() in aSet and bSet
+        SetLinkedList unionSet = aSet.union(bSet);
+        System.out.println("aSet.union(bSet) = " + unionSet);
+
+        // test intersection() in aSet and bSet
+        SetLinkedList intersectionSet = aSet.intersection(bSet);
+        System.out.println("aSet.intersection(bSet) = " + intersectionSet);
+
+        // test difference() in aSet and bSet
+        SetLinkedList differenceSet = aSet.difference(bSet);
+        System.out.println("aSet.difference(bSet) = " + differenceSet);
+
+        // test symmetricDifference() in aSet and bSet
+        SetLinkedList symmetricDifferenceSet = aSet.symmetricDifference(bSet);
+        System.out.println("aSet.symmetricDifference(bSet) = " + symmetricDifferenceSet);
     }
 }
