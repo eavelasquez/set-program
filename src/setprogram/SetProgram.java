@@ -70,6 +70,7 @@ public class SetProgram {
         SetArray aSet = new SetArray(a);
         SetArray bSet = new SetArray(b);
         SetArray cSet = new SetArray(1);
+        SetArray dSet = new SetArray(1);
 
         // test toString()
         System.out.println("uSet = " + uSet);
@@ -103,6 +104,28 @@ public class SetProgram {
         // test indexOf() in aSet
         System.out.println("aSet.indexOf(2) = " + aSet.indexOf(2));
         System.out.println("aSet.indexOf(3) = " + aSet.indexOf(3));
+
+        // test equals() in cSet and dSet
+        System.out.println("cSet.equals(dSet) = " + cSet.equals(dSet));
+        cSet.add(1);
+        System.out.println("cSet.add(1) = " + cSet);
+        System.out.println("cSet.equals(dSet) = " + cSet.equals(dSet));
+
+        // test union() in aSet and bSet
+        SetArray unionSet = aSet.union(bSet);
+        System.out.println("aSet.union(bSet) = " + unionSet);
+
+        // test intersection() in aSet and bSet
+        SetArray intersectionSet = aSet.intersection(bSet);
+        System.out.println("aSet.intersection(bSet) = " + intersectionSet);
+
+        // test difference() in aSet and bSet
+        SetArray differenceSet = aSet.difference(bSet);
+        System.out.println("aSet.difference(bSet) = " + differenceSet);
+        
+        // test symmetricDifference() in aSet and bSet
+        SetArray symmetricDifferenceSet = aSet.symmetricDifference(bSet);
+        System.out.println("aSet.symmetricDifference(bSet) = " + symmetricDifferenceSet);
     }
 
     public static void testSetLinkedList() {
