@@ -150,4 +150,94 @@ public class SetArray implements Set {
   public void clear() {
     set = new int[0];
   }
+
+  /**
+   * Returns true if this set is equal to the specified set.
+   * 
+   * @param other the other set
+   * @return true if this set is equal to the specified set
+   */
+  public boolean equals(SetArray other) {
+    if (other.size() != size()) {
+      return false;
+    }
+    for (int i = 0; i < size(); i++) {
+      if (!other.contains(set[i])) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  /**
+   * Returns a new set that is the union of this set and the specified set.
+   * 
+   * @param other the other set
+   * @return a new set that is the union of this set and the specified set
+   */
+  public SetArray union(SetArray other) {
+    SetArray newSet = new SetArray();
+    for (int i = 0; i < size(); i++) {
+      newSet.add(set[i]);
+    }
+    for (int i = 0; i < other.size(); i++) {
+      newSet.add(other.set[i]);
+    }
+    return newSet;
+  }
+
+  /**
+   * Returns a new set that is the intersection of this set and the specified set.
+   * 
+   * @param other the other set
+   * @return a new set that is the intersection of this set and the specified set
+   */
+  public SetArray intersection(SetArray other) {
+    SetArray newSet = new SetArray();
+    for (int i = 0; i < size(); i++) {
+      if (other.contains(set[i])) {
+        newSet.add(set[i]);
+      }
+    }
+    return newSet;
+  }
+
+  /**
+   * Returns a new set that is the difference of this set and the specified set.
+   * 
+   * @param other the other set
+   * @return a new set that is the difference of this set and the specified set
+   */
+  public SetArray difference(SetArray other) {
+    SetArray newSet = new SetArray();
+    for (int i = 0; i < size(); i++) {
+      if (!other.contains(set[i])) {
+        newSet.add(set[i]);
+      }
+    }
+    return newSet;
+  }
+
+  /**
+   * Returns a new set that is the symmetric difference of this set and the
+   * specified set.
+   * 
+   * @param other the other set
+   * @return a new set that is the symmetric difference of this set and the
+   *         specified set
+   */
+  public SetArray symmetricDifference(SetArray other) {
+    SetArray newSet = new SetArray();
+    for (int i = 0; i < size(); i++) {
+      if (!other.contains(set[i])) {
+        newSet.add(set[i]);
+      }
+    }
+    for (int i = 0; i < other.size(); i++) {
+      if (!contains(other.set[i])) {
+        newSet.add(other.set[i]);
+      }
+    }
+    return newSet;
+  }
 }
