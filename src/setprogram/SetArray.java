@@ -5,13 +5,15 @@
  * Set Array.
  *
  * % java SetArray
- */
+ ******************************************************************************/
 package setprogram;
 
 /**
  * The {@code SetArray} class represents a set array. Set are data structures
  * that store a collection of unique elements in no particular order.
  * The set is implemented as a array.
+ * 
+ * @author eavelasquez
  */
 public class SetArray implements Set {
   int[] set; // set array
@@ -25,6 +27,7 @@ public class SetArray implements Set {
 
   /**
    * Initializes a set from an array of ints.
+   * 
    * @param nums the array of ints
    */
   public SetArray(int[] nums) {
@@ -36,6 +39,7 @@ public class SetArray implements Set {
 
   /**
    * Returns true if this set contains the specified element.
+   * 
    * @param e the element to be checked for containment in this set
    * @return true if this set contains e
    */
@@ -51,6 +55,7 @@ public class SetArray implements Set {
 
   /**
    * Adds an element to this set if it is not already present.
+   * 
    * @param e the element to be added to this set
    */
   @Override
@@ -69,6 +74,7 @@ public class SetArray implements Set {
 
   /**
    * Removes an element from this set if it is present.
+   * 
    * @param e the element to be removed from this set, if present
    */
   @Override
@@ -90,6 +96,7 @@ public class SetArray implements Set {
 
   /**
    * Returns a string representation of this set.
+   * 
    * @return a string representation of this set
    */
   @Override
@@ -108,6 +115,7 @@ public class SetArray implements Set {
 
   /**
    * Returns the size of this set.
+   * 
    * @return the number of elements in this set
    */
   @Override
@@ -117,6 +125,7 @@ public class SetArray implements Set {
 
   /**
    * Returns true if this set is empty.
+   * 
    * @return true if this set contains no elements
    */
   @Override

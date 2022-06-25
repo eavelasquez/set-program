@@ -5,13 +5,15 @@
  * Set Linked List.
  *
  * % java SetLinkedList
- */
+ ******************************************************************************/
 package setprogram;
 
 /**
  * The {@code SetLinkedList} class represents a set linked list. Set are data
  * structures that store a collection of unique elements in no particular order.
  * The set is implemented as a linked list.
+ * 
+ * @author eavelasquez
  */
 public class SetLinkedList implements Set {
   Node head; // head of list
@@ -55,6 +57,7 @@ public class SetLinkedList implements Set {
 
   /**
    * Returns true if this set contains the specified element.
+   * 
    * @param e the element to be checked for containment in this set
    * @return true if this set contains e
    */
@@ -72,6 +75,7 @@ public class SetLinkedList implements Set {
 
   /**
    * Adds an element to this set if it is not already present.
+   * 
    * @param e the element to be added to this set
    */
   @Override
@@ -85,6 +89,7 @@ public class SetLinkedList implements Set {
 
   /**
    * Removes an element from this set if it is present.
+   * 
    * @param e the element to be removed from this set, if present
    */
   @Override
@@ -111,6 +116,7 @@ public class SetLinkedList implements Set {
 
   /**
    * Returns a string representation of this set.
+   * 
    * @return a string representation of this set
    */
   @Override
@@ -131,6 +137,7 @@ public class SetLinkedList implements Set {
 
   /**
    * Returns the size of this set.
+   * 
    * @return the number of elements in this set
    */
   @Override
@@ -146,6 +153,7 @@ public class SetLinkedList implements Set {
 
   /**
    * Returns true if this set is empty.
+   * 
    * @return true if this set contains no elements
    */
   @Override

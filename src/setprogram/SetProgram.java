@@ -1,21 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/******************************************************************************
+ * Compilation: javac SetProgram.java
+ * Execution: java SetProgram
+ *
+ * Sets with arrays and Linked List.
+ *
+ * % java SetProgram
+ *
+ ******************************************************************************/
 package setprogram;
 
 /**
+ * The {@code SetProgram} class represents a setA with arrays and with Linked
+ * List.
  *
- * @author ev
+ * @author eavelasquez
  */
 public class SetProgram {
 
     /**
-     * @param args the command line arguments
+     * Unit tests the setA data type.
+     *
+     * @param args the command-line arguments (none)
      */
     public static void main(String[] args) {
         // TODO code application logic here
     }
-    
 }
