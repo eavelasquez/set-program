@@ -14,4 +14,6 @@ public interface Set {
   public boolean isEmpty();
 
   public void clear();
+
+  public int indexOf(int e);
 }
