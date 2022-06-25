@@ -26,6 +26,27 @@ public class SetLinkedList implements Set {
   }
 
   /**
+   * Initializes a set with one element.
+   * 
+   * @param element the element to add to the set.
+   */
+  public SetLinkedList(int e) {
+    head = new Node(e);
+  }
+
+  /**
+   * Initializes a set from an array of ints.
+   * 
+   * @param nums the array of ints
+   */
+  public SetLinkedList(int[] nums) {
+    head = null;
+    for (int i = 0; i < nums.length; i++) {
+      add(nums[i]);
+    }
+  }
+
+  /**
    * Linked List Node. This inner class is made static so that main() can access
    * it.
    */
