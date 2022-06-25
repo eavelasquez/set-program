@@ -209,4 +209,114 @@ public class SetLinkedList implements Set {
     }
     return -1;
   }
+
+  /**
+   * Returns true if this set is equal to the specified set.
+   *
+   * @param other the set to be compared to this set
+   * @return true if this set equals other
+   */
+  public boolean equals(SetLinkedList other) {
+    if (size() != other.size()) {
+      return false;
+    }
+    Node current = head;
+    while (current != null) {
+      if (!other.contains(current.item)) {
+        return false;
+      }
+      current = current.next;
+    }
+    return true;
+  }
+
+  /**
+   * Returns a new set that is the union of this set and the specified set.
+   * 
+   * @param other the set to be combined with this set
+   * @return a new set that is the union of this set and the specified set
+   */
+  public SetLinkedList union(SetLinkedList other) {
+    SetLinkedList union = new SetLinkedList();
+    Node current = head;
+    while (current != null) {
+      if (!union.contains(current.item)) {
+        union.add(current.item);
+      }
+      current = current.next;
+    }
+    current = other.head;
+    while (current != null) {
+      if (!union.contains(current.item)) {
+        union.add(current.item);
+      }
+      current = current.next;
+    }
+    return union;
+  }
+
+  /**
+   * Returns a new set that is the intersection of this set and the specified set.
+   * 
+   * @param other the set to be intersected with this set
+   * @return a new set that is the intersection of this set and the specified set
+   */
+  public SetLinkedList intersection(SetLinkedList other) {
+    SetLinkedList intersection = new SetLinkedList();
+    Node current = head;
+    while (current != null) {
+      if (other.contains(current.item)) {
+        intersection.add(current.item);
+      }
+      current = current.next;
+    }
+    return intersection;
+  }
+
+  /**
+   * Returns a new set that is the difference of this set and the specified set.
+   * 
+   * @param other the set to be subtracted from this set
+   * @return a new set that is the difference of this set and the specified set
+   */
+  public SetLinkedList difference(SetLinkedList other) {
+    SetLinkedList difference = new SetLinkedList();
+    Node current = head;
+    while (current != null) {
+      if (!other.contains(current.item)) {
+        difference.add(current.item);
+      }
+      current = current.next;
+    }
+    return difference;
+  }
+
+  /**
+   * Returns a new set that is the symmetric difference of this set and the
+   * specified set.
+   * 
+   * @param other the set to be subtracted from this set
+   * @return a new set that is the symmetric difference of this set and the
+   *         specified set
+   */
+  public SetLinkedList symmetricDifference(SetLinkedList other) {
+    SetLinkedList symmetricDifference = new SetLinkedList();
+    // add all elements from this set that are not in other
+    Node current = head;
+    while (current != null) {
+      if (!other.contains(current.item)) {
+        symmetricDifference.add(current.item);
+      }
+      current = current.next;
+    }
+    // add all elements from other that are not in this set
+    current = other.head;
+    while (current != null) {
+      if (!contains(current.item)) {
+        symmetricDifference.add(current.item);
+      }
+      current = current.next;
+    }
+    return symmetricDifference;
+  }
 }
