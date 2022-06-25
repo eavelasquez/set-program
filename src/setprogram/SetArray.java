@@ -55,7 +55,7 @@ public class SetArray implements Set {
    */
   @Override
   public boolean contains(int e) {
-    for (int i = 0; i < set.length; i++) {
+    for (int i = 0; i < size(); i++) {
       if (set[i] == e) {
         return true;
       }
@@ -71,11 +71,11 @@ public class SetArray implements Set {
   @Override
   public void add(int e) {
     if (!contains(e)) {
-      int[] newSet = new int[set.length + 1];
-      for (int i = 0; i < set.length; i++) {
+      int[] newSet = new int[size() + 1];
+      for (int i = 0; i < size(); i++) {
         newSet[i] = set[i];
       }
-      newSet[set.length] = e;
+      newSet[size()] = e;
       set = newSet;
     } else {
       System.out.println("Element " + e + " already exists in the set.");
@@ -90,9 +90,9 @@ public class SetArray implements Set {
   @Override
   public void remove(int e) {
     if (contains(e)) {
-      int[] newSet = new int[set.length - 1];
+      int[] newSet = new int[size() - 1];
       int j = 0;
-      for (int i = 0; i < set.length; i++) {
+      for (int i = 0; i < size(); i++) {
         if (set[i] != e) {
           newSet[j] = set[i];
           j++;
@@ -113,9 +113,9 @@ public class SetArray implements Set {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("{");
-    for (int i = 0; i < set.length; i++) {
+    for (int i = 0; i < size(); i++) {
       sb.append(set[i]);
-      if (i < set.length - 1) {
+      if (i < size() - 1) {
         sb.append(", ");
       }
     }
@@ -140,7 +140,7 @@ public class SetArray implements Set {
    */
   @Override
   public boolean isEmpty() {
-    return set.length == 0;
+    return size() == 0;
   }
 
   /**
