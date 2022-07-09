@@ -26,38 +26,29 @@ public class SetProgram {
      */
     public static void main(String[] args) {
         int choice = 0;
-        Scanner in = new Scanner(System.in);
-        String[] options = { "\n1. Set with arrays", "\n2. Set with linked list", "\n3. Quit\n" };
-
-        System.out.println("\n*** Set Program ***");
-        while (choice != 3) {
-            for (String option : options) {
-                System.out.print(option);
-            }
-            System.out.print("Enter your choice: ");
-            try {
-                choice = in.nextInt();
-                switch (choice) {
-                    case 1:
-                        testSetArray();
-                        break;
-                    case 2:
-                        testSetLinkedList();
-                        break;
-                    case 3:
-                        System.out.println("\nGoodbye!");
-                        break;
-                    default:
-                        System.out.println("\nInvalid choice!");
-                        break;
+        try (Scanner in = new Scanner(System.in)) {
+            String[] options = { "\n1. Set with arrays", "\n2. Set with linked list", "\n3. Quit\n" };
+            
+            System.out.println("\n*** Set Program ***");
+            while (choice != 3) {
+                for (String option : options) {
+                    System.out.print(option);
                 }
-            } catch (Exception e) {
-                System.out.println("\nInvalid choice. Try again.");
-                in.nextLine();
-                continue;
+                System.out.print("Enter your choice: ");
+                try {
+                    choice = in.nextInt();
+                    switch (choice) {
+                        case 1 -> testSetArray();
+                        case 2 -> testSetLinkedList();
+                        case 3 -> System.out.println("\nGoodbye!");
+                        default -> System.out.println("\nInvalid choice!");
+                    }
+                } catch (Exception e) {
+                    System.out.println("\nInvalid choice. Try again.");
+                    in.nextLine();
+                }
             }
         }
-        in.close();
     }
 
     public static void testSetArray() {
@@ -77,6 +68,7 @@ public class SetProgram {
         System.out.println("aSet = " + aSet);
         System.out.println("bSet = " + bSet);
         System.out.println("cSet = " + cSet);
+        System.out.println("dSet = " + dSet);
 
         // test add() and contains() in aSet
         aSet.add(2);
@@ -159,6 +151,7 @@ public class SetProgram {
         System.out.println("aSet = " + aSet);
         System.out.println("bSet = " + bSet);
         System.out.println("cSet = " + cSet);
+        System.out.println("dSet = " + dSet);
 
         // test add() and contains() in aSet
         aSet.add(2);
