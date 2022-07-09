@@ -12,6 +12,7 @@ public interface Set {
 
   public void remove(int e);
 
+  @Override
   public String toString();
 
   public int size();

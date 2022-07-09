@@ -28,7 +28,7 @@ public class SetLinkedList implements Set {
   /**
    * Initializes a set with one element.
    * 
-   * @param element the element to add to the set.
+   * @param e the element to add to the set.
    */
   public SetLinkedList(int e) {
     head = new Node(e);
@@ -100,7 +100,7 @@ public class SetLinkedList implements Set {
    * @param e the element to be added to this set
    */
   @Override
-  public void add(int e) {
+  public final void add(int e) {
     if (!contains(e)) {
       head = new Node(e, head);
     } else {
